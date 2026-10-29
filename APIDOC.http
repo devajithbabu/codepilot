@@ -1,0 +1,153 @@
+#api call for admin regiter
+###
+POST http://127.0.0.1:8000/accounts/admin/register/
+Content-Type: application/json
+
+{
+    "username":"userog",
+    "email":"user4@gmail.com",
+    "password":"password",
+    "phone":"15345678593"
+}
+
+#api call for student register
+###
+POST http://127.0.0.1:8000/accounts/student/register/
+Content-Type: application/json
+
+{
+    "username":"userr",
+    "email":"stud2@gmail.com",
+    "password":"password",
+    "phone":"15345674892"
+}
+
+#api call for token
+###
+POST http://127.0.0.1:8000/exam/token/
+Content-Type: application/json
+
+{
+    "username":"userog",
+    "password":"password"
+}
+
+
+#===========================================================================================================================
+
+#===========================================================================================================================
+
+#api call for listing exams
+###
+get http://127.0.0.1:8000/exam/assesment/
+Accept: application/json
+Authorization: Token ca00cb60660323248322413aa109b5d612e13981
+
+#api call for creating exam
+###
+post http://127.0.0.1:8000/exam/assesment/
+Content-Type: application/json
+Authorization: Token ca00cb60660323248322413aa109b5d612e13981
+
+{
+    
+    "title": "java Assessment",
+    "batch": "java Batch 01",
+    "language": "Java",
+    "examdate": "2026-12-10",
+    "duration": 2,
+    "starttime": "12:00:00",
+    "status": "scheduled"
+
+}
+
+#api call for retrive exam
+###
+get http://127.0.0.1:8000/exam/assesment/7/
+Accept: application/json
+Authorization: Token ca00cb60660323248322413aa109b5d612e13981
+
+#api call for updating exam
+###
+put http://127.0.0.1:8000/exam/assesment/1/
+Content-Type: application/json
+Authorization: Token ca00cb60660323248322413aa109b5d612e13981
+
+{
+    
+    "title": "Python Assessment",
+    "batch": "Python Batch 02",
+    "language": "Python",
+    "examdate": "2026-12-10",
+    "duration": 60,
+    "starttime": "12:00:00",
+    "status": "scheduled"
+
+}
+
+#api call for delete exam
+###
+delete http://127.0.0.1:8000/exam/assesment/1/
+Accept: application/json
+Authorization: Token ca00cb60660323248322413aa109b5d612e13981
+
+
+#===============================================================================================================================
+
+#=======================================================================================================================
+
+
+#api call for adding question
+###
+POST http://127.0.0.1:8000/problem/assesment/11/question/
+Content-Type: application/json
+Authorization: Token ca00cb60660323248322413aa109b5d612e13981
+
+{
+    "title":"substract number",
+    "description":"program for substract 2 numbers",
+    "score":10
+}
+
+#api call for retrieve question
+###
+GET http://127.0.0.1:8000/problem/assesment/4/
+Accept: application/json
+Authorization: Token ca00cb60660323248322413aa109b5d612e13981
+
+#=======================================================================================================================
+#=======================================================================================================================
+
+
+#api call for submission
+###
+POST http://127.0.0.1:8000/evaluation/assesment/11/submission/
+Content-Type: application/json
+Authorization: Token c9c500fb33933dd7366e4fd3f910f712da7ca1c0
+
+#api call for retrive submission
+###
+GET http://127.0.0.1:8000/evaluation/submission/1/
+Accept: application/json
+Authorization: Token 22b348417da300dc811a4a8626be648a26af81c5
+
+#api call for adding answer
+###
+POST http://127.0.0.1:8000/evaluation/submission/8/answer/
+Content-Type: application/json
+Authorization: Token c9c500fb33933dd7366e4fd3f910f712da7ca1c0
+
+{
+    "question":4,
+    "answer_text":"print(hello world)"
+}
+
+#evaluate answer
+###
+PUT http://127.0.0.1:8000/evaluation/answer/1/
+Content-Type: application/json
+Authorization: 
+{
+
+    
+}
